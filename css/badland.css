@@ -1,0 +1,23 @@
+a, a:hover  {
+  text-decoration: none;
+}
+
+#container {
+  margin: 0 auto;
+  width: 50em;
+}
+
+.ascii {
+  float: left;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.song {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.song p {
+  padding-top: 5px;
+}
