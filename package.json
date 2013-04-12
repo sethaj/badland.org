@@ -1,0 +1,12 @@
+{
+  "name": "badland",
+  "version": "0.0.1",
+  "description": " badland ",
+  "dependencies": {
+    "express": "~3.1.0",
+    "path": "~0.4.9",
+    "mongoose": "~3.5.5",
+    "nconf": "~0.6.7",
+    "jade": "~0.28.2"
+  }
+}

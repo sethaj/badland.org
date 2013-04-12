@@ -1,4 +1,6 @@
-/ascii
-/mp3
-/js/lib
-badland.sql
+public/ascii
+public/mp3
+public/js/lib
+/node_modules
+config.json
+/bin
