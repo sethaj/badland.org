@@ -4,3 +4,4 @@ public/js/lib
 /node_modules
 config.json
 /bin
+*.swp
