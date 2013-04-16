@@ -42,25 +42,23 @@ var Song = mongoose.model('songs', songSchema);
 
 app.get('/', function(req, res) {
   var badlands = [];
-  var order = [];
   Song.find({}).sort({score: -1}).execFind(function(err, songs) {
     i=0;
     songs.forEach(function(song) {   // TODO: forEach is blocking?
-      order.push(song['song']);
       Ascii.count({}, function (err, count) {
         // Not recomended: http://stackoverflow.com/a/2824166
         Ascii.findOne().limit(-1).skip(Math.floor(Math.random()*count)).exec(function(err, ascii) {
           i++;
           badlands.push({
-            order:  order.indexOf(song['song']),
             id:     song['_id'],
             file:   song['file'],
             ogg:    song['file'].replace(/\.mp3$/, ".ogg"),
             song:   song['song'],
+            score:  song['score'],
             ascii:  ascii['ascii']
           });
           if (i==153) { // 153 songs
-            res.render('index.jade', { b: badlands.sort(function(a,b) { return a.order - b.order }) });
+            res.render('index.jade', { b: badlands.sort(function(a,b) { return b.score - a.score }) });
           }
         });
       });
