@@ -7,9 +7,11 @@ jQuery(function($) {
   });
 
   $('.song').css({
-    'color': rand_hex_color(),
     'z-index' : 10,
     'text-align' : 'center',
+  });
+  $('.song p a').each(function(index) {
+    $(this).css({ 'color': rand_hex_color() });
   });
 
   $('.ascii').hover(function() {
