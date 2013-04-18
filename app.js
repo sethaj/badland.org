@@ -66,7 +66,23 @@ app.get('/', function(req, res) {
   });
 });
 
+app.get('/update/:id', function(req, res) {
+  Song.findById(req.params.id, function(error, song) {
+    if (error) throw error;
+    song.score = song['score'] + 1;;
+    song.save(function (err, song) {
+      if (err) throw err;
+      console.log(song['_id'] + ' updated to ' + song.score);
+      res.send(song);
+    });
+  });
+});
+
+
 var port = 8081;
+if (__dirname.match('badland.dev')) {
+  port = 9081;
+}
 app.listen( port, function() {
   console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
 });

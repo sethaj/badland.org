@@ -32,6 +32,14 @@ jQuery(function($) {
     //columnWidth : 50 
   });
 
+  $('.score p').click(function() {
+    var id = this.id;
+    $.get('update/'+id, function(result) {
+      $('#'+id).text('+ ' + result.score);
+    });
+  });
+  
+
 }); 
 
 function rand(i) {
