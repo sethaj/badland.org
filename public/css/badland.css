@@ -21,9 +21,19 @@ a, a:hover  {
   right:0;
   height:30px;
   width:30px;
+  margin:5px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
   border-radius: 15px;
+  opacity:0.8;
   z-index:11;
   cursor: pointer;
+}
+
+.score p {
+  position:relative;
+  bottom:10px;
+  left:5px;
 }
 
 .song {

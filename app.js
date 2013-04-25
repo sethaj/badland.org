@@ -11,9 +11,7 @@ app.configure( function() {
   app.use( express.methodOverride() );
   app.use( app.router );
   app.use( express.static( path.join( application_root, 'public') ) );
-  // Show all errors in development
   app.use( express.errorHandler({ dumpExceptions: true, showStack: true }));
-
 });
 
 nconf.use('file', { file: './config.json' });

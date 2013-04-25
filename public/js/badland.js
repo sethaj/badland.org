@@ -1,8 +1,14 @@
 jQuery(function($) {
   $('.ascii').each(function(index) {
+    var txt = rand_hex_color();
+    var bg  = rand_hex_color();
     $(this).css({
-      'color' : rand_hex_color(),
-      'background-color' : rand_hex_color(),
+      'color' : txt,
+      'background-color' : bg,
+    });
+    $(this).children('.score').css({
+      'background-color' : txt,
+      'color': bg,
     });
   });
 
@@ -16,9 +22,15 @@ jQuery(function($) {
 
   $('.ascii').hover(function() {
     $(this).everyTime(100, function() {
+      var txt = rand_hex_color();
+      var bg  = rand_hex_color();
       $(this).css({
-        'background-color' : rand_hex_color(),
-        'color' : rand_hex_color(),
+        'background-color' : bg,
+        'color' : txt,
+      });
+      $(this).children('.score').css({
+        'background-color' : txt,
+        'color': bg,
       });
     });
   }, function() {
