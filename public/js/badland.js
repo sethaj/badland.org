@@ -12,10 +12,6 @@ jQuery(function($) {
     });
   });
 
-  $('.song').css({
-    'z-index' : 10,
-    'text-align' : 'center',
-  });
   $('.song p a').each(function(index) {
     $(this).css({ 'color': rand_hex_color() });
   });
@@ -61,18 +57,4 @@ function rand(i) {
 function rand_hex_color() {
   // http://paulirish.com/2009/random-hex-color-code-snippets/
   return '#'+ ('000000' + rand(16777215).toString(16)).slice(-6);
-}
-
-function fisherYates ( arr ) {
-  // http://stackoverflow.com/questions/2450954/how-to-randomize-a-javascript-array
-  var i = arr.length, j, tempi, tempj;
-  if ( i == 0 ) return false;
-  while ( --i ) {
-     j = Math.floor( Math.random() * ( i + 1 ) );
-     tempi = arr[i];
-     tempj = arr[j];
-     arr[i] = tempj;
-     arr[j] = tempi;
-   }
-  return arr;
 }

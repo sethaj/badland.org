@@ -38,6 +38,8 @@ a, a:hover  {
 
 .song {
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 10;
+  text-align: center;
 }
 
 .song p {
