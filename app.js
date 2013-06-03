@@ -12,9 +12,10 @@ app.configure( function() {
   app.use( app.router );
   app.use( express.static( path.join( application_root, 'public') ) );
   app.use( express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.set( 'views', __dirname + '/views');
 });
 
-nconf.use('file', { file: './config.json' });
+nconf.use('file', { file: __dirname + '/config.json' });
 var user      = nconf.get('mongo:username');
 var pass      = nconf.get('mongo:password');
 var database  = nconf.get('mongo:database');
