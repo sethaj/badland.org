@@ -21,6 +21,7 @@ var pass      = nconf.get('mongo:password');
 var database  = nconf.get('mongo:database');
 var host      = nconf.get('mongo:hostname');
 var dsn = 'mongodb://' + user + ':' + pass + '@' + host + '/' + database;
+var gacode    = nconf.get('gacode');
 
 mongoose.connect(dsn, function(err) {
   if (err) throw err;
@@ -37,6 +38,8 @@ var songSchema = mongoose.Schema({
   score: Number 
 });
 var Song = mongoose.model('songs', songSchema);
+
+
 
 
 app.get('/', function(req, res) {
@@ -57,7 +60,7 @@ app.get('/', function(req, res) {
             ascii:  ascii['ascii']
           });
           if (i==153) { // 153 songs
-            res.render('index.jade', { b: badlands.sort(function(a,b) { return b.score - a.score }) });
+            res.render('index.jade', { gacode: gacode, b: badlands.sort(function(a,b) { return b.score - a.score }) });
           }
         });
       });
