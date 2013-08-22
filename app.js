@@ -74,7 +74,9 @@ app.get('/update/:id', function(req, res) {
     song.score = song['score'] + 1;;
     song.save(function (err, song) {
       if (err) throw err;
-      console.log(song['_id'] + ' updated to ' + song.score);
+      var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+      var date = new Date();
+      console.log(date + "\t" + ip + "\t" + song['_id'] + ' updated to ' + song.score);
       res.send(song);
     });
   });
