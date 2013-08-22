@@ -20,7 +20,7 @@ a, a:hover  {
   top:0;
   right:0;
   height:30px;
-  width:30px;
+  width:60px;
   margin:5px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -33,7 +33,7 @@ a, a:hover  {
 .score p {
   position:relative;
   bottom:10px;
-  left:5px;
+  text-align: center;
 }
 
 .song {
