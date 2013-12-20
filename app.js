@@ -88,5 +88,6 @@ if (__dirname.match('badland.dev')) {
   port = 9081;
 }
 app.listen( port, function() {
-  console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
+  var date = new Date();
+  console.log(date + "\t" + 'Express server listening on port %d in %s mode', port, app.settings.env );
 });
